@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "461647111426",
+    "project_id": "checkout-3d04b",
+    "storage_bucket": "checkout-3d04b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461647111426:android:391d935fb316f1462cce1b",
+        "android_client_info": {
+          "package_name": "com.ashik.checkout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461647111426-6l4djtbvca63qfeo9461tcodkm3mi3ec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhegN2GGXFngD8q_9Z5hcfD0U2-mS6ZtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461647111426-6l4djtbvca63qfeo9461tcodkm3mi3ec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

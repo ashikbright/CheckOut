@@ -21,15 +21,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import static android.content.ContentValues.TAG;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    EditText editNworker,editNdays,editLocation;
+public class MainActivity extends AppCompatActivity  {
+    EditText editNworker;
+    EditText editNdays;
+    EditText editLocation;
     Button button;
     Spinner spinner;
     DatabaseReference databaseReference;
-    String item;
-    Worker worker;
-    String[] wTypes={"Choose Worker Type","Mistri","Tiles/Marbel Mistri","Painter","Plumber","Furniture Works","Electrician","Welder"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,49 +38,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         editLocation=findViewById(R.id.edtLocation);
         button=findViewById(R.id.BtnSave);
         spinner=findViewById(R.id.wtype);
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
-        databaseReference=FirebaseDatabase.getInstance().getReference().child("value");
-        spinner.setOnItemSelectedListener(this);
 
-        //worker=new Worker();
-        ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,wTypes);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(arrayAdapter);
+        databaseReference=FirebaseDatabase.getInstance().getReference().child("Checkout");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SaveValue(item);
+                checkoutdata();
             }
         });
 
-
     }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        item=spinner.getSelectedItem().toString();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
-    void SaveValue(String item){
-        if(item=="Choose Worker Type"){
-            Toast.makeText(this, "Please Select a Worker Type", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            worker.setwType(item);
-            String id=databaseReference.push().getKey();
-            databaseReference.child(id).setValue(worker);
-            Toast.makeText(this, "Check Out Done", Toast.LENGTH_SHORT).show();
-        }
+    private  void checkoutdata(){
+        String worker_type=spinner.getSelectedItem().toString();
         String nworkers=editNworker.getText().toString();
         String ndays=editNdays.getText().toString();
         String location=editLocation.getText().toString();
 
-        worker=new Worker(nworkers,ndays,location);
-        databaseReference.push().setValue(value);
+        Worker worker=new Worker(worker_type,nworkers,ndays,location);
+        databaseReference.push().setValue(worker);
+        Toast.makeText(this, "CheckOut Done...", Toast.LENGTH_SHORT).show();
     }
 }

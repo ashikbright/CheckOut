@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">CheckOut</string>
+    <array name="worker_type">
+        <item>Mistri</item>
+        <item>Tiles/Marbel Mistri</item>
+        <item>Painter</item>
+        <item>Plumber</item>
+        <item>Furniture Works</item>
+        <item>Electrician</item>
+        <item>Welder</item>
+    </array>
 </resources>

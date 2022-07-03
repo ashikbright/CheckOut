@@ -1,15 +1,20 @@
 package com.ashik.checkout;
 
 public class Worker {
-    private  String wType;
+    String wtype;
     String nworker;
     String ndays;
     String location;
 
-    public Worker( String nworker, String ndays, String location) {
+    public Worker(String wtype, String nworker, String ndays, String location) {
+        this.wtype = wtype;
         this.nworker = nworker;
         this.ndays = ndays;
         this.location = location;
+    }
+
+    public String getWtype() {
+        return wtype;
     }
 
     public String getNworker() {
@@ -22,17 +27,5 @@ public class Worker {
 
     public String getLocation() {
         return location;
-    }
-
-    public Worker(){
-
-    }
-
-    public String getwType() {
-        return wType;
-    }
-
-    public void setwType(String wType) {
-        this.wType = wType;
     }
 }

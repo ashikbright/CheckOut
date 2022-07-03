@@ -50,13 +50,20 @@ public class MainActivity extends AppCompatActivity  {
 
     }
     private  void checkoutdata(){
+
         String worker_type=spinner.getSelectedItem().toString();
         String nworkers=editNworker.getText().toString();
         String ndays=editNdays.getText().toString();
         String location=editLocation.getText().toString();
-
+        if(worker_type=="Choose Worker Type")
+        {
+            Toast.makeText(this, "Choose a Worker!!!", Toast.LENGTH_SHORT).show();
+        }
+        else{
         Worker worker=new Worker(worker_type,nworkers,ndays,location);
         databaseReference.push().setValue(worker);
         Toast.makeText(this, "CheckOut Done...", Toast.LENGTH_SHORT).show();
     }
+    }
+
 }

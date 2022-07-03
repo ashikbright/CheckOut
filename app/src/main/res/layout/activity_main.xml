@@ -69,7 +69,7 @@
                     android:fontFamily="serif"
                     android:hint="Workers Required in Total"
                     android:padding="8dp"
-                    android:textColor="#fff" />
+                    android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/edtndays"
@@ -80,7 +80,7 @@
                     android:fontFamily="serif"
                     android:hint="Anticipated Work Duration"
                     android:padding="8dp"
-                    android:textColor="#fff" />
+                    android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/edtLocation"
@@ -91,7 +91,7 @@
                     android:fontFamily="serif"
                     android:hint="Location/Address"
                     android:padding="8dp"
-                    android:textColor="#fff" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -99,6 +99,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/border"
                     android:hint="    Estimated Price"
+                    android:textColor="#000000"
                     android:textSize="24sp" />
 
                 <LinearLayout

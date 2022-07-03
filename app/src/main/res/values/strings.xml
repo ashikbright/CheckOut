@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CheckOut</string>
     <array name="worker_type">
+        <item>Choose Worker Type</item>
         <item>Mistri</item>
         <item>Tiles/Marbel Mistri</item>
         <item>Painter</item>

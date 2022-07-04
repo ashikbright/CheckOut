@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 checkoutdata();
+                //clearing data
+                editNworker.getText().clear();
+                editNdays.getText().clear();
+                editLocation.getText().clear();
             }
         });
 
@@ -55,15 +59,17 @@ public class MainActivity extends AppCompatActivity  {
         String nworkers=editNworker.getText().toString();
         String ndays=editNdays.getText().toString();
         String location=editLocation.getText().toString();
-        if(worker_type=="Choose Worker Type")
+        /*if(worker_type=="Choose Worker Type")
         {
             Toast.makeText(this, "Choose a Worker!!!", Toast.LENGTH_SHORT).show();
         }
-        else{
+        else{}*/
         Worker worker=new Worker(worker_type,nworkers,ndays,location);
         databaseReference.push().setValue(worker);
         Toast.makeText(this, "CheckOut Done...", Toast.LENGTH_SHORT).show();
-    }
+
+            
+
     }
 
 }

@@ -1,0 +1,38 @@
+{
+  "Users": {
+    "6C36H02ayYXbkUvpPeLO8qPh1mV2": {
+      "email": "muzammilmds@gmail.com",
+      "isUser": "1",
+      "name": "Muzammil",
+      "phone": "8088362493"
+    },
+    "Ry7wufofo6VNMkpf0yOcaGsLzFB2": {
+      "email": "safwan123@gmail.com",
+      "isUser": "1",
+      "name": "safwan",
+      "phone": "1345678277"
+    },
+    "SUz5a3qCFCZW725rmast99jgxZl1": {
+      "email": "afreedappi011@gmail.com",
+      "isWorker": "1",
+      "name": "Afreed Appi",
+      "phone": "8970129113"
+    },
+    "bNPxLZkWHEfqS1T0OnWP5lyVTHO2": {
+      "email": "muhammedafnan8184@gmail.com",
+      "isAdmin": "1",
+      "name": "Afnan",
+      "phone": "8970129113"
+    },
+    "jMeFBoARvGctxs3gTPbdwy0KUbY2": {
+      "email": "mubasshirmds313@gmail.com",
+      "isUser": "1",
+      "name": "Mubasshir",
+      "phone": "9945132091"
+    }
+  },
+  "Workers": {
+
+}
+
+}

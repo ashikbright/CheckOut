@@ -22,51 +22,61 @@ import com.google.firebase.database.ValueEventListener;
 import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity  {
-    EditText editNworker;
-    EditText editNdays;
+    EditText editNoWorkers;
+    EditText editNoDays;
     EditText editLocation;
     Button button;
     Spinner spinner;
     DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editNworker=findViewById(R.id.edtnWorkers);
-        editNdays=findViewById(R.id.edtndays);
-        editLocation=findViewById(R.id.edtLocation);
-        button=findViewById(R.id.BtnSave);
-        spinner=findViewById(R.id.wtype);
+        editNoWorkers = findViewById(R.id.edtnWorkers);
+        editNoDays = findViewById(R.id.edtNDays);
+        editLocation = findViewById(R.id.edtLocation);
+        button = findViewById(R.id.BtnSave);
+        spinner = findViewById(R.id.wtype);
 
-        databaseReference=FirebaseDatabase.getInstance().getReference().child("Checkout");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Checkout");
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkoutdata();
                 //clearing data
-                editNworker.getText().clear();
-                editNdays.getText().clear();
+                editNoWorkers.getText().clear();
+                editNoDays.getText().clear();
                 editLocation.getText().clear();
             }
+
         });
 
     }
     private  void checkoutdata(){
 
-        String worker_type=spinner.getSelectedItem().toString();
-        String nworkers=editNworker.getText().toString();
-        String ndays=editNdays.getText().toString();
-        String location=editLocation.getText().toString();
-        /*if(worker_type=="Choose Worker Type")
-        {
-            Toast.makeText(this, "Choose a Worker!!!", Toast.LENGTH_SHORT).show();
-        }
-        else{}*/
-        Worker worker=new Worker(worker_type,nworkers,ndays,location);
-        databaseReference.push().setValue(worker);
-        Toast.makeText(this, "CheckOut Done...", Toast.LENGTH_SHORT).show();
+        String worker_type = spinner.getSelectedItem().toString();
+        String nworkers  = editNoWorkers.getText().toString();
+        String ndays = editNoDays.getText().toString();
+        String location = editLocation.getText().toString();
+
+
+        Worker worker = new Worker(worker_type, nworkers, ndays, location);
+        databaseReference.push().setValue(worker,  new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                if (databaseError != null) {
+                    Log.d("checkoutMsg" , "Data could not be saved " + databaseError.getMessage());
+                } else {
+                    Log.d("checkoutMsg" ,"Data saved successfully.");
+                    Toast.makeText(getApplicationContext(), "CheckOut Done...", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
             
 

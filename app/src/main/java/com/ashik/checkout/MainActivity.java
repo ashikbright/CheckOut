@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 checkoutdata();
-                //clearing data
+                //clearing data from edittext
                 editNworker.getText().clear();
                 editNdays.getText().clear();
                 editLocation.getText().clear();

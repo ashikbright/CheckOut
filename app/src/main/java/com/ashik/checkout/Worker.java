@@ -1,31 +1,32 @@
 package com.ashik.checkout;
 
 public class Worker {
-    String wtype;
-    String nworker;
-    String ndays;
-    String location;
+    String wType;
+    String nWorkers;
+    String nDays;
+    String wLocation;
 
-    public Worker(String wtype, String nworker, String ndays, String location) {
-        this.wtype = wtype;
-        this.nworker = nworker;
-        this.ndays = ndays;
-        this.location = location;
+    public Worker(String wType, String nWorker, String nDays, String wLocation) {
+        this.wType = wType;
+        this.nWorkers = nWorker;
+        this.nDays = nDays;
+        this.wLocation = wLocation;
+        
+    }
+        
+    public String getWType() {
+        return wType;
     }
 
-    public String getWtype() {
-        return wtype;
+    public String getNoWorker() {
+        return nWorkers;
     }
 
-    public String getNworker() {
-        return nworker;
-    }
-
-    public String getNdays() {
-        return ndays;
+    public String getNoDays() {
+        return nDays;
     }
 
     public String getLocation() {
-        return location;
+        return wLocation;
     }
 }

@@ -1,12 +1,16 @@
 <resources>
     <string name="app_name">CheckOut</string>
+    <string name="book_now">Book Now</string>
+    <string name="confirm_order">Confirm Order></string>
+
     <array name="worker_type">
         <item>Mistri</item>
-        <item>Tiles/Marbel Mistri</item>
+        <item>Tiles/Marble Mistri</item>
         <item>Painter</item>
         <item>Plumber</item>
         <item>Furniture Works</item>
         <item>Electrician</item>
         <item>Welder</item>
     </array>
+
 </resources>

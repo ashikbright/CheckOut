@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
 
         editNworker=findViewById(R.id.edtnWorkers);
-        editNdays=findViewById(R.id.edtndays);
+        editNdays=findViewById(R.id.edtNDays);
         editLocation=findViewById(R.id.edtLocation);
         button=findViewById(R.id.BtnSave);
         spinner=findViewById(R.id.wtype);
